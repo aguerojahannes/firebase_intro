@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html >
 <head>
-	<title>firebaseintro</title>
+	<title>FIREBASE INTRO | TV Shows</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap_theme.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
 <body>
-	<h1>The App Works!</h1>
+
+	<div class="well form-inline" style="text-align:center">
+		<h1>TV Shows</h1><br/>
+		Submit your favorite show:&nbsp;
+		<input class="form-control" placeholder="Title" id="tvTitle"/>
+		<input class="form-control" placeholder="Years" id="tvYears"/>
+		<input class="form-control" placeholder="Rating" id="tvRating"/>
+		<button class="btn btn-primary" onclick="saveTVShow()">Submit</button>
+	</div>
+	<div id="buttonsGoHere" style="text-align:center;">
+
+	</div>
+
+	<div class="container">
+	<ul id="tvShows"></ul>
+	</div>
+
+	<div id="delete">
+		<button type="button" class="btn btn-danger" onclick="startDelete()">Delete</button>
+</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+	      </div>
+	      <div class="modal-body">
+	        <label>Title</label><br/>
+			  <input class="form-control" placeholder="Title" id="editTitle">
+			  <label>Years</label><br/>
+			  <input class="form-control" placeholder="Years" id="editYears">
+			  <label>Rating</label><br>
+			  <input class="form-control" placeholder="Rating" id="editRating">
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <span id="editSubmitButton"></span>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<script src="/jquery/dist/jquery.min.js"></script>
+	<script src="/bootstrap/dist/js/bootstrap.min.js"></script> <!-- bootstrap replies on jquery. -->
 	<script src="/javascript/app.js"></script>
 </body>
 </html>
+
+
+<!-- <textarea></textarea> is a different type of input where the input area is malleable by the user -->
